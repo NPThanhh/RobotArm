@@ -1,0 +1,81 @@
+COMMAND:
+e:\VsCode\.venv\Scripts\python.exe test.py --dataset_root E:\VsCode\graspnet-baseline-main\dataset --checkpoint_path E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar --dump_dir E:\VsCode\graspnet-baseline-main\eval_dump_realsense --camera realsense --num_point 20000 --num_view 300 --batch_size 1 --collision_thresh 0.01 --voxel_size 0.01 --num_workers 0
+
+========== STDOUT ==========
+180
+180
+-> loaded checkpoint E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar (epoch: 1)
+180
+180
+-> loaded checkpoint E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar (epoch: 1)
+180
+180
+-> loaded checkpoint E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar (epoch: 1)
+180
+180
+-> loaded checkpoint E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar (epoch: 1)
+180
+180
+-> loaded checkpoint E:\VsCode\graspnet-baseline-main\logs\log_realsense\checkpoint.tar (epoch: 1)
+
+
+========== STDERR ==========
+WARNING:root:Failed to import geometry msgs in rigid_transformations.py.
+WARNING:root:Failed to import ros dependencies in rigid_transforms.py
+WARNING:root:autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+
+Loading data path and collision labels...:   0%|          | 0/45 [00:00<?, ?it/s]
+Loading data path and collision labels...: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 45/45 [00:00<00:00, 14971.34it/s]
+WARNING:root:Failed to import geometry msgs in rigid_transformations.py.
+WARNING:root:Failed to import ros dependencies in rigid_transforms.py
+WARNING:root:autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+
+Loading data path and collision labels...:   0%|          | 0/45 [00:00<?, ?it/s]
+Loading data path and collision labels...: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 45/45 [00:00<00:00, 22517.74it/s]
+WARNING:root:Failed to import geometry msgs in rigid_transformations.py.
+WARNING:root:Failed to import ros dependencies in rigid_transforms.py
+WARNING:root:autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+
+Loading data path and collision labels...:   0%|          | 0/45 [00:00<?, ?it/s]
+Loading data path and collision labels...: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 45/45 [00:00<00:00, 17856.54it/s]
+WARNING:root:Failed to import geometry msgs in rigid_transformations.py.
+WARNING:root:Failed to import ros dependencies in rigid_transforms.py
+WARNING:root:autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+
+Loading data path and collision labels...:   0%|          | 0/45 [00:00<?, ?it/s]
+Loading data path and collision labels...: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 45/45 [00:00<00:00, 11256.18it/s]
+WARNING:root:Failed to import geometry msgs in rigid_transformations.py.
+WARNING:root:Failed to import ros dependencies in rigid_transforms.py
+WARNING:root:autolab_core not installed as catkin package, RigidTransform ros methods will be unavailable
+
+Loading data path and collision labels...:   0%|          | 0/45 [00:00<?, ?it/s]
+Loading data path and collision labels...: 100%|â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆ| 45/45 [00:00<00:00, 14972.53it/s]
+Traceback (most recent call last):
+  File "E:\VsCode\graspnet-baseline-main\test.py", line 117, in <module>
+    inference()
+  File "E:\VsCode\graspnet-baseline-main\test.py", line 71, in inference
+    for batch_idx, batch_data in enumerate(TEST_DATALOADER):
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\dataloader.py", line 733, in __next__
+    data = self._next_data()
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\dataloader.py", line 1515, in _next_data
+    return self._process_data(data, worker_id)
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\dataloader.py", line 1550, in _process_data
+    data.reraise()
+  File "e:\VsCode\.venv\lib\site-packages\torch\_utils.py", line 750, in reraise
+    raise exception
+FileNotFoundError: Caught FileNotFoundError in DataLoader worker process 0.
+Original Traceback (most recent call last):
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\_utils\worker.py", line 349, in _worker_loop
+    data = fetcher.fetch(index)  # type: ignore[possibly-undefined]
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "e:\VsCode\.venv\lib\site-packages\torch\utils\data\_utils\fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "E:\VsCode\graspnet-baseline-main\dataset\graspnet_dataset.py", line 135, in __getitem__
+    return self.get_data(index)
+  File "E:\VsCode\graspnet-baseline-main\dataset\graspnet_dataset.py", line 138, in get_data
+    color = np.array(Image.open(self.colorpath[index]), dtype=np.float32) / 255.0
+  File "e:\VsCode\.venv\lib\site-packages\PIL\Image.py", line 3513, in open
+    fp = builtins.open(filename, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: 'E:\\VsCode\\graspnet-baseline-main\\dataset\\scenes\\scene_0100\\realsense\\rgb\\0000.png'
+
